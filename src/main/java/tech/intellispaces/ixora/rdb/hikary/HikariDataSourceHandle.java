@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tech.intellispaces.framework.core.annotation.Mapper;
-import tech.intellispaces.framework.core.annotation.MoverWithBacklash;
+import tech.intellispaces.framework.core.annotation.Mover;
 import tech.intellispaces.framework.core.annotation.ObjectHandle;
 import tech.intellispaces.framework.core.exception.TraverseException;
 import tech.intellispaces.ixora.rdb.BasicConnectionHandleImpl;
@@ -33,7 +33,7 @@ public abstract class HikariDataSourceHandle implements DataSourceMovableHandle 
     return dataSourceProperties;
   }
 
-  @MoverWithBacklash
+  @Mover
   @Override
   public ConnectionHandle getConnection() {
     if (LOG.isDebugEnabled()) {
