@@ -1,13 +1,13 @@
-package tech.intellispaces.ixora.rdb.hikary.unit;
+package tech.intellispaces.ixora.rdb.hikary.configuration;
 
+import tech.intellispaces.framework.core.annotation.Configuration;
 import tech.intellispaces.framework.core.annotation.Projection;
-import tech.intellispaces.framework.core.annotation.Unit;
 import tech.intellispaces.ixora.rdb.DataSourceMovableHandle;
 import tech.intellispaces.ixora.rdb.DataSourcePropertiesHandle;
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSource;
 
-@Unit
-public class HikariUnit {
+@Configuration
+public class HikariConfiguration {
 
   @Projection
   public DataSourceMovableHandle dataSource(DataSourcePropertiesHandle dataSourceProperties) {
