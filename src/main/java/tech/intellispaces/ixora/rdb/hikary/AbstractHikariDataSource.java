@@ -7,7 +7,7 @@ import tech.intellispaces.framework.core.annotation.Mapper;
 import tech.intellispaces.framework.core.annotation.Mover;
 import tech.intellispaces.framework.core.annotation.ObjectHandle;
 import tech.intellispaces.framework.core.exception.TraverseException;
-import tech.intellispaces.ixora.rdb.BasicConnectionHandleImpl;
+import tech.intellispaces.ixora.rdb.BasicConnection;
 import tech.intellispaces.ixora.rdb.ConnectionHandle;
 import tech.intellispaces.ixora.rdb.DataSourceMovableHandle;
 import tech.intellispaces.ixora.rdb.DataSourcePropertiesHandle;
@@ -15,14 +15,14 @@ import tech.intellispaces.ixora.rdb.DataSourcePropertiesHandle;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@ObjectHandle
-public abstract class HikariDataSourceHandle implements DataSourceMovableHandle {
-  private static final Logger LOG = LoggerFactory.getLogger(HikariDataSourceHandle.class);
+@ObjectHandle("HikariDataSource")
+public abstract class AbstractHikariDataSource implements DataSourceMovableHandle {
+  private static final Logger LOG = LoggerFactory.getLogger(AbstractHikariDataSource.class);
 
   private final DataSourcePropertiesHandle dataSourceProperties;
   private final com.zaxxer.hikari.HikariDataSource dataSource;
 
-  public HikariDataSourceHandle(DataSourcePropertiesHandle dataSourceProperties) {
+  public AbstractHikariDataSource(DataSourcePropertiesHandle dataSourceProperties) {
     this.dataSourceProperties = dataSourceProperties;
     this.dataSource = createDataSource();
   }
@@ -41,7 +41,7 @@ public abstract class HikariDataSourceHandle implements DataSourceMovableHandle 
     }
     try {
       Connection connection = dataSource.getConnection();
-      return new BasicConnectionHandleImpl(connection);
+      return new BasicConnection(connection);
     } catch (SQLException e) {
       throw TraverseException.withCauseAndMessage(e, "Could not get JDBC connection from Hikari data source. " +
           "URL '{}', username '{}'");
