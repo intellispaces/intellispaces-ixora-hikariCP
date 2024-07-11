@@ -31,6 +31,11 @@
         <!-- Ixora -->
         <dependency>
             <groupId>intellispaces</groupId>
+            <artifactId>ixora-rdb-hikari-ontology</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>intellispaces</groupId>
             <artifactId>ixora-rdb</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
