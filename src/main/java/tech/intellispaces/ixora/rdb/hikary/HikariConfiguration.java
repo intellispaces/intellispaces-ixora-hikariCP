@@ -1,4 +1,4 @@
-package tech.intellispaces.ixora.rdb.hikary.configuration;
+package tech.intellispaces.ixora.rdb.hikary;
 
 import intellispaces.ixora.rdb.DataSourcePropertiesHandle;
 import tech.intellispaces.framework.core.annotation.Configuration;
