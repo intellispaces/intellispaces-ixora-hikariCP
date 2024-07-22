@@ -7,7 +7,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ixora-rdb-hikari</artifactId>
+    <groupId>mindstructs</groupId>
+    <artifactId>mindstructs-rdb-hikari</artifactId>
     <packaging>jar</packaging>
 
     <build>
@@ -28,15 +29,15 @@
     </build>
 
     <dependencies>
-        <!-- Ixora -->
+        <!-- Mindstructs -->
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-rdb-hikari-ontology</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-rdb-hikari-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-rdb</artifactId>
+            <groupId>mindstructs</groupId>
+            <artifactId>mindstructs-rdb</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

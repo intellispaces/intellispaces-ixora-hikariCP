@@ -1,16 +1,16 @@
-package tech.intellispaces.ixora.rdb.hikary;
+package tech.mindstructs.hikary;
 
 import com.zaxxer.hikari.HikariConfig;
-import intellispaces.ixora.rdb.ConnectionHandle;
-import intellispaces.ixora.rdb.DataSourcePropertiesHandle;
-import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceHandle;
+import intellispaces.ixora.mindstructs.rdb.ConnectionHandle;
+import intellispaces.ixora.mindstructs.rdb.DataSourcePropertiesHandle;
+import intellispaces.ixora.mindstructs.rdb.hikary.MovableHikariDataSourceHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tech.intellispaces.framework.core.annotation.Mapper;
 import tech.intellispaces.framework.core.annotation.Mover;
 import tech.intellispaces.framework.core.annotation.ObjectHandle;
 import tech.intellispaces.framework.core.exception.TraverseException;
-import tech.intellispaces.ixora.rdb.BasicConnection;
+import tech.mindstructs.rdb.BasicConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;

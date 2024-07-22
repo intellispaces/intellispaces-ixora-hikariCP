@@ -1,6 +1,6 @@
-package tech.intellispaces.ixora.rdb.hikary;
+package tech.mindstructs.hikary;
 
-import intellispaces.ixora.rdb.DataSourcePropertiesHandle;
+import intellispaces.ixora.mindstructs.rdb.DataSourcePropertiesHandle;
 import tech.intellispaces.framework.core.annotation.Configuration;
 import tech.intellispaces.framework.core.annotation.Projection;
 
