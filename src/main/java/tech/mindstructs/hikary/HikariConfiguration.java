@@ -1,14 +1,29 @@
 package tech.mindstructs.hikary;
 
+import intellispaces.ixora.mindstructs.rdb.hikary.HikariDataSourceFactory;
+import intellispaces.ixora.mindstructs.rdb.hikary.HikariDataSourceFactoryHandle;
 import intellispaces.ixora.mindstructs.rdb.hikary.HikariDataSourcePropertiesHandle;
 import tech.intellispaces.framework.core.annotation.Configuration;
 import tech.intellispaces.framework.core.annotation.Projection;
+import tech.intellispaces.framework.core.annotation.Properties;
 
 @Configuration
-public class HikariConfiguration {
+public abstract class HikariConfiguration {
 
   @Projection
-  public HikariDataSource dataSource(HikariDataSourcePropertiesHandle dataSourceProperties) {
-    return new HikariDataSource(dataSourceProperties);
+  @Properties("datasource")
+  public abstract HikariDataSourcePropertiesHandle hikariDataSourceProperties();
+
+  @Projection
+  public HikariDataSourceFactoryHandle hikariDataSourceFactory() {
+    return new HikariDataSourceFactory();
+  }
+
+  @Projection
+  public HikariDataSource dataSource(
+      HikariDataSourceFactoryHandle hikariDataSourceFactory,
+      HikariDataSourcePropertiesHandle hikariDataSourceProperties
+  ) {
+    return hikariDataSourceFactory.create(hikariDataSourceProperties);
   }
 }

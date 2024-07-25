@@ -1,8 +1,6 @@
 package tech.mindstructs.hikary;
 
-import com.zaxxer.hikari.HikariConfig;
 import intellispaces.ixora.mindstructs.rdb.ConnectionHandle;
-import intellispaces.ixora.mindstructs.rdb.DataSourcePropertiesHandle;
 import intellispaces.ixora.mindstructs.rdb.hikary.HikariDataSourcePropertiesHandle;
 import intellispaces.ixora.mindstructs.rdb.hikary.MovableHikariDataSourceHandle;
 import org.slf4j.Logger;
@@ -23,9 +21,12 @@ public abstract class AbstractHikariDataSource implements MovableHikariDataSourc
   private final HikariDataSourcePropertiesHandle dataSourceProperties;
   private final com.zaxxer.hikari.HikariDataSource dataSource;
 
-  public AbstractHikariDataSource(HikariDataSourcePropertiesHandle dataSourceProperties) {
+  public AbstractHikariDataSource(
+      com.zaxxer.hikari.HikariDataSource dataSource,
+      HikariDataSourcePropertiesHandle dataSourceProperties
+  ) {
+    this.dataSource = dataSource;
     this.dataSourceProperties = dataSourceProperties;
-    this.dataSource = createDataSource();
   }
 
   @Mapper
@@ -49,23 +50,11 @@ public abstract class AbstractHikariDataSource implements MovableHikariDataSourc
     }
   }
 
-  String url() {
+  private String url() {
     return dataSourceProperties.url().trim();
   }
 
-  String username() {
+  private String username() {
     return dataSourceProperties.username().trim();
-  }
-
-  String password() {
-    return dataSourceProperties.password().trim();
-  }
-
-  private com.zaxxer.hikari.HikariDataSource createDataSource() {
-    var config = new HikariConfig();
-    config.setJdbcUrl(url());
-    config.setUsername(username());
-    config.setPassword(password());
-    return new com.zaxxer.hikari.HikariDataSource(config);
   }
 }
