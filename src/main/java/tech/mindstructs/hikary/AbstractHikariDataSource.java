@@ -3,6 +3,7 @@ package tech.mindstructs.hikary;
 import com.zaxxer.hikari.HikariConfig;
 import intellispaces.ixora.mindstructs.rdb.ConnectionHandle;
 import intellispaces.ixora.mindstructs.rdb.DataSourcePropertiesHandle;
+import intellispaces.ixora.mindstructs.rdb.hikary.HikariDataSourcePropertiesHandle;
 import intellispaces.ixora.mindstructs.rdb.hikary.MovableHikariDataSourceHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,17 +20,17 @@ import java.sql.SQLException;
 public abstract class AbstractHikariDataSource implements MovableHikariDataSourceHandle {
   private static final Logger LOG = LoggerFactory.getLogger(AbstractHikariDataSource.class);
 
-  private final DataSourcePropertiesHandle dataSourceProperties;
+  private final HikariDataSourcePropertiesHandle dataSourceProperties;
   private final com.zaxxer.hikari.HikariDataSource dataSource;
 
-  public AbstractHikariDataSource(DataSourcePropertiesHandle dataSourceProperties) {
+  public AbstractHikariDataSource(HikariDataSourcePropertiesHandle dataSourceProperties) {
     this.dataSourceProperties = dataSourceProperties;
     this.dataSource = createDataSource();
   }
 
   @Mapper
   @Override
-  public DataSourcePropertiesHandle properties() {
+  public HikariDataSourcePropertiesHandle properties() {
     return dataSourceProperties;
   }
 

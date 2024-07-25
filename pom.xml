@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>mindstructs</groupId>
-    <artifactId>mindstructs-rdb-hikari</artifactId>
+    <artifactId>mindstructs-hikariCP</artifactId>
     <packaging>jar</packaging>
 
     <build>
