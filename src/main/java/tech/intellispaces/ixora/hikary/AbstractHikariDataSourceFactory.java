@@ -1,21 +1,21 @@
-package tech.mindstructs.hikary;
+package tech.intellispaces.ixora.hikary;
 
 import com.zaxxer.hikari.HikariConfig;
-import intellispaces.ixora.mindstructs.rdb.hikary.HikariDataSourceHandle;
-import intellispaces.ixora.mindstructs.rdb.hikary.HikariDataSourceProperties;
-import intellispaces.ixora.mindstructs.rdb.hikary.MovableHikariDataSourceFactoryHandle;
+import intellispaces.ixora.rdb.hikary.HikariDataSourceHandle;
+import intellispaces.ixora.rdb.hikary.HikariDataSourcePropertiesHandle;
+import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactoryHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tech.intellispaces.framework.core.annotation.Mover;
-import tech.intellispaces.framework.core.annotation.ObjectHandle;
+import tech.intellispaces.core.annotation.MovableObjectHandle;
+import tech.intellispaces.core.annotation.Mover;
 
-@ObjectHandle("HikariDataSource")
+@MovableObjectHandle("HikariDataSourceFactory")
 public abstract class AbstractHikariDataSourceFactory implements MovableHikariDataSourceFactoryHandle {
   private static final Logger LOG = LoggerFactory.getLogger(AbstractHikariDataSourceFactory.class);
 
   @Mover
   @Override
-  public HikariDataSourceHandle create(HikariDataSourceProperties properties) {
+  public HikariDataSourceHandle create(HikariDataSourcePropertiesHandle properties) {
     var config = new HikariConfig();
     config.setJdbcUrl(properties.url().trim());
     config.setUsername(properties.username().trim());
