@@ -1,8 +1,8 @@
 package tech.intellispaces.ixora.hikary;
 
 import intellispaces.ixora.rdb.hikary.HikariDataSourceFactoryHandle;
+import intellispaces.ixora.rdb.hikary.HikariDataSourceHandle;
 import intellispaces.ixora.rdb.hikary.HikariDataSourcePropertiesHandle;
-import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceHandle;
 import tech.intellispaces.core.annotation.Configuration;
 import tech.intellispaces.core.annotation.Projection;
 import tech.intellispaces.core.annotation.Properties;
@@ -20,7 +20,7 @@ public abstract class HikariConfiguration {
   }
 
   @Projection
-  public MovableHikariDataSourceHandle dataSource(
+  public HikariDataSourceHandle dataSource(
       HikariDataSourceFactoryHandle hikariDataSourceFactory,
       HikariDataSourcePropertiesHandle hikariDataSourceProperties
   ) {
