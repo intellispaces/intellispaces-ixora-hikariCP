@@ -1,4 +1,4 @@
-package tech.intellispaces.ixora.hikary;
+package intellispaces.ixora.hikary;
 
 import com.zaxxer.hikari.HikariConfig;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceHandle;
@@ -6,8 +6,8 @@ import intellispaces.ixora.rdb.hikary.HikariDataSourcePropertiesHandle;
 import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactoryHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tech.intellispaces.core.annotation.MovableObjectHandle;
-import tech.intellispaces.core.annotation.Mover;
+import intellispaces.core.annotation.MovableObjectHandle;
+import intellispaces.core.annotation.Mover;
 
 @MovableObjectHandle("HikariDataSourceFactory")
 public abstract class AbstractHikariDataSourceFactory implements MovableHikariDataSourceFactoryHandle {
