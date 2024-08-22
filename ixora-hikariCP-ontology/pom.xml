@@ -3,19 +3,13 @@
 
     <parent>
         <groupId>intellispaces</groupId>
-        <artifactId>intellispaces-parent-pom</artifactId>
+        <artifactId>ixora-hikariCP-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>intellispaces</groupId>
-    <artifactId>ixora-hikariCP-parent</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>ixora-hikariCP-ontology</module>
-        <module>ixora-hikariCP</module>
-    </modules>
-
+    <artifactId>ixora-hikariCP-ontology</artifactId>
+    <packaging>jar</packaging>
+	
     <build>
         <plugins>
             <plugin>
@@ -26,10 +20,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-            </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <!-- Ixora -->
+        <dependency>
+            <groupId>intellispaces</groupId>
+            <artifactId>ixora-rdb-ontology</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
