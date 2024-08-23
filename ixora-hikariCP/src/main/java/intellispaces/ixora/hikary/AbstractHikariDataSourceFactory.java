@@ -1,26 +1,26 @@
 package intellispaces.ixora.hikary;
 
 import com.zaxxer.hikari.HikariConfig;
-import intellispaces.ixora.rdb.hikary.HikariDataSourceHandle;
-import intellispaces.ixora.rdb.hikary.HikariDataSourcePropertiesHandle;
-import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactoryHandle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import intellispaces.core.annotation.MovableObjectHandle;
 import intellispaces.core.annotation.Mover;
+import intellispaces.ixora.rdb.hikary.HikariDataSource;
+import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
+import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@MovableObjectHandle("HikariDataSourceFactory")
-public abstract class AbstractHikariDataSourceFactory implements MovableHikariDataSourceFactoryHandle {
+@MovableObjectHandle("HikariDataSourceFactoryImpl")
+public abstract class AbstractHikariDataSourceFactory implements MovableHikariDataSourceFactory {
   private static final Logger LOG = LoggerFactory.getLogger(AbstractHikariDataSourceFactory.class);
 
   @Mover
   @Override
-  public HikariDataSourceHandle create(HikariDataSourcePropertiesHandle properties) {
+  public HikariDataSource create(HikariDataSourceProperties properties) {
     var config = new HikariConfig();
     config.setJdbcUrl(properties.url().trim());
     config.setUsername(properties.username().trim());
     config.setPassword(properties.password().trim());
     var hds = new com.zaxxer.hikari.HikariDataSource(config);
-    return new HikariDataSource(hds, properties);
+    return new HikariDataSourceImpl(hds, properties);
   }
 }

@@ -1,28 +1,28 @@
 package intellispaces.ixora.hikary;
 
-import intellispaces.ixora.rdb.hikary.HikariDataSourceFactoryHandle;
-import intellispaces.ixora.rdb.hikary.HikariDataSourceHandle;
-import intellispaces.ixora.rdb.hikary.HikariDataSourcePropertiesHandle;
 import intellispaces.core.annotation.Configuration;
 import intellispaces.core.annotation.Projection;
 import intellispaces.core.annotation.Properties;
+import intellispaces.ixora.rdb.hikary.HikariDataSource;
+import intellispaces.ixora.rdb.hikary.HikariDataSourceFactory;
+import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
 
 @Configuration
 public abstract class HikariConfiguration {
 
   @Projection
   @Properties("datasource")
-  public abstract HikariDataSourcePropertiesHandle hikariDataSourceProperties();
+  public abstract HikariDataSourceProperties hikariDataSourceProperties();
 
   @Projection
-  public HikariDataSourceFactoryHandle hikariDataSourceFactory() {
-    return new HikariDataSourceFactory();
+  public HikariDataSourceFactory hikariDataSourceFactory() {
+    return new HikariDataSourceFactoryImpl();
   }
 
   @Projection
-  public HikariDataSourceHandle dataSource(
-      HikariDataSourceFactoryHandle hikariDataSourceFactory,
-      HikariDataSourcePropertiesHandle hikariDataSourceProperties
+  public HikariDataSource dataSource(
+      HikariDataSourceFactory hikariDataSourceFactory,
+      HikariDataSourceProperties hikariDataSourceProperties
   ) {
     return hikariDataSourceFactory.create(hikariDataSourceProperties).asMovableOrElseThrow();
   }

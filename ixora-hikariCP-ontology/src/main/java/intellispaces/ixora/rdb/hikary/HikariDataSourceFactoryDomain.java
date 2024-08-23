@@ -7,8 +7,8 @@ import intellispaces.core.traverse.TraverseTypes;
 
 @Factory
 @Domain("7aae1f0c-1d54-43a3-a9f8-fc32bbb6891e")
-public interface HikariDataSourceFactory {
+public interface HikariDataSourceFactoryDomain {
 
   @Transition(value = "16b62a7e-4c8c-4d41-bd44-36581db13589", allowedTraverseTypes = TraverseTypes.Moving, factory = true)
-  HikariDataSource create(HikariDataSourceProperties properties);
+  HikariDataSourceDomain create(HikariDataSourcePropertiesDomain properties);
 }
