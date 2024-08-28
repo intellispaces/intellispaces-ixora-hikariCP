@@ -6,6 +6,7 @@ import intellispaces.core.annotation.ObjectHandle;
 import intellispaces.core.exception.TraverseException;
 import intellispaces.ixora.rdb.BasicConnection;
 import intellispaces.ixora.rdb.Connection;
+import intellispaces.ixora.rdb.hikary.HikariDataSourceDomain;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
 import intellispaces.ixora.rdb.hikary.MovableHikariDataSource;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 
-@ObjectHandle("HikariDataSourceImpl")
+@ObjectHandle(value = HikariDataSourceDomain.class, name = "HikariDataSourceWrapper")
 public abstract class AbstractHikariDataSource implements MovableHikariDataSource {
   private static final Logger LOG = LoggerFactory.getLogger(AbstractHikariDataSource.class);
 
