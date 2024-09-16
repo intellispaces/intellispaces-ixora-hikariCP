@@ -12,8 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>ixora-hikariCP-ontology</module>
-        <module>ixora-hikariCP</module>
+        <module>intellispaces-ixora-hikariCP-ontology</module>
+        <module>intellispaces-ixora-hikariCP</module>
     </modules>
 
     <build>
