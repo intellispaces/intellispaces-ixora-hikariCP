@@ -2,13 +2,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>intellispaces</groupId>
+        <groupId>intellispaces-parent</groupId>
         <artifactId>intellispaces-parent-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>intellispaces</groupId>
-    <artifactId>ixora-hikariCP-parent</artifactId>
+    <groupId>intellispaces-ixora</groupId>
+    <artifactId>intellispaces-ixora-hikariCP-parent</artifactId>
     <packaging>pom</packaging>
 
     <modules>

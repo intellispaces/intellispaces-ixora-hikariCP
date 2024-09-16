@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>intellispaces</groupId>
-        <artifactId>ixora-hikariCP-parent</artifactId>
+        <groupId>intellispaces-ixora</groupId>
+        <artifactId>intellispaces-ixora-hikariCP-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>ixora-hikariCP</artifactId>
+    <artifactId>intellispaces-ixora-hikariCP</artifactId>
     <packaging>jar</packaging>
 	
     <build>
@@ -26,15 +26,13 @@
     <dependencies>
         <!-- Intellispaces -->
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-hikariCP-ontology</artifactId>
+            <groupId>intellispaces-ixora</groupId>
+            <artifactId>intellispaces-ixora-hikariCP-ontology</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
-        <!-- Ixora -->
         <dependency>
-            <groupId>intellispaces</groupId>
-            <artifactId>ixora-rdb</artifactId>
+            <groupId>intellispaces-ixora</groupId>
+            <artifactId>intellispaces-ixora-rdb</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

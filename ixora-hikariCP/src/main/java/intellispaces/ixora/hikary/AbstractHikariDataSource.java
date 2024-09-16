@@ -1,9 +1,9 @@
 package intellispaces.ixora.hikary;
 
-import intellispaces.core.annotation.Mapper;
-import intellispaces.core.annotation.Mover;
-import intellispaces.core.annotation.ObjectHandle;
-import intellispaces.core.exception.TraverseException;
+import intellispaces.framework.core.annotation.Mapper;
+import intellispaces.framework.core.annotation.Mover;
+import intellispaces.framework.core.annotation.ObjectHandle;
+import intellispaces.framework.core.exception.TraverseException;
 import intellispaces.ixora.rdb.BasicConnection;
 import intellispaces.ixora.rdb.Connection;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceDomain;

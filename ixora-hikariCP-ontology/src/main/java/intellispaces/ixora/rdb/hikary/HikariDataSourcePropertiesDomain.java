@@ -1,7 +1,7 @@
 package intellispaces.ixora.rdb.hikary;
 
-import intellispaces.core.annotation.Data;
-import intellispaces.core.annotation.Domain;
+import intellispaces.framework.core.annotation.Data;
+import intellispaces.framework.core.annotation.Domain;
 import intellispaces.ixora.rdb.DataSourcePropertiesDomain;
 
 @Data

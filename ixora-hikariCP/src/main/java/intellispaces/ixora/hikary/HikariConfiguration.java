@@ -1,8 +1,8 @@
 package intellispaces.ixora.hikary;
 
-import intellispaces.core.annotation.Configuration;
-import intellispaces.core.annotation.Projection;
-import intellispaces.core.annotation.Properties;
+import intellispaces.framework.core.annotation.Configuration;
+import intellispaces.framework.core.annotation.Projection;
+import intellispaces.framework.core.annotation.Properties;
 import intellispaces.ixora.rdb.hikary.HikariDataSource;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceFactory;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;

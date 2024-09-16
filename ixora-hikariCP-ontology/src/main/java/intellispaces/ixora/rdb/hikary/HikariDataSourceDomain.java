@@ -1,7 +1,7 @@
 package intellispaces.ixora.rdb.hikary;
 
-import intellispaces.core.annotation.Domain;
-import intellispaces.core.annotation.Transition;
+import intellispaces.framework.core.annotation.Domain;
+import intellispaces.framework.core.annotation.Transition;
 import intellispaces.ixora.rdb.DataSourceDomain;
 
 @Domain("01908c4f-942b-7715-a5a0-0d89c9aaebaf")
