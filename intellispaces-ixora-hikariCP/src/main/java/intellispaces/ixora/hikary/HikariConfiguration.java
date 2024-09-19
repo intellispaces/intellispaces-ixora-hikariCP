@@ -16,7 +16,7 @@ public abstract class HikariConfiguration {
 
   @Projection
   public HikariDataSourceFactory hikariDataSourceFactory() {
-    return new HikariDataSourceFactoryImpl();
+    return new HikariDataSourceFactoryHandleImpl();
   }
 
   @Projection

@@ -10,9 +10,9 @@ import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@ObjectHandle(value = HikariDataSourceFactoryDomain.class, name = "HikariDataSourceFactoryImpl")
-public abstract class AbstractHikariDataSourceFactory implements MovableHikariDataSourceFactory {
-  private static final Logger LOG = LoggerFactory.getLogger(AbstractHikariDataSourceFactory.class);
+@ObjectHandle(value = HikariDataSourceFactoryDomain.class, name = "HikariDataSourceFactoryHandleImpl")
+public abstract class HikariDataSourceFactoryHandle implements MovableHikariDataSourceFactory {
+  private static final Logger LOG = LoggerFactory.getLogger(HikariDataSourceFactoryHandle.class);
 
   @Mover
   @Override
@@ -22,6 +22,6 @@ public abstract class AbstractHikariDataSourceFactory implements MovableHikariDa
     config.setUsername(properties.username().trim());
     config.setPassword(properties.password().trim());
     var hds = new com.zaxxer.hikari.HikariDataSource(config);
-    return new HikariDataSourceWrapper(hds, properties);
+    return new HikariDataSourceHandleImpl(hds, properties);
   }
 }
