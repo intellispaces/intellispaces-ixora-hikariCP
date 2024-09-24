@@ -1,7 +1,7 @@
 package intellispaces.ixora.hikary;
 
 import com.zaxxer.hikari.HikariConfig;
-import intellispaces.framework.core.annotation.Mover;
+import intellispaces.framework.core.annotation.MapperOfMoving;
 import intellispaces.framework.core.annotation.ObjectHandle;
 import intellispaces.ixora.rdb.hikary.HikariDataSource;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceFactoryDomain;
@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 public abstract class HikariDataSourceFactoryHandle implements MovableHikariDataSourceFactory {
   private static final Logger LOG = LoggerFactory.getLogger(HikariDataSourceFactoryHandle.class);
 
-  @Mover
   @Override
+  @MapperOfMoving
   public HikariDataSource create(HikariDataSourceProperties properties) {
     var config = new HikariConfig();
     config.setJdbcUrl(properties.url().trim());

@@ -1,7 +1,7 @@
 package intellispaces.ixora.hikary;
 
 import intellispaces.framework.core.annotation.Mapper;
-import intellispaces.framework.core.annotation.Mover;
+import intellispaces.framework.core.annotation.MapperOfMoving;
 import intellispaces.framework.core.annotation.ObjectHandle;
 import intellispaces.framework.core.exception.TraverseException;
 import intellispaces.ixora.rdb.Connection;
@@ -35,8 +35,8 @@ public abstract class HikariDataSourceHandle implements MovableHikariDataSource 
     return dataSourceProperties;
   }
 
-  @Mover
   @Override
+  @MapperOfMoving
   public Connection getConnection() {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Get JDBC connection from Hikari data source. URL '{}', username '{}'", url(), username());
