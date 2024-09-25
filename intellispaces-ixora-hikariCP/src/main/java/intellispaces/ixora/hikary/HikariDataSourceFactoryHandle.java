@@ -7,12 +7,9 @@ import intellispaces.ixora.rdb.hikary.HikariDataSource;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceFactoryDomain;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
 import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @ObjectHandle(value = HikariDataSourceFactoryDomain.class, name = "HikariDataSourceFactoryHandleImpl")
 public abstract class HikariDataSourceFactoryHandle implements MovableHikariDataSourceFactory {
-  private static final Logger LOG = LoggerFactory.getLogger(HikariDataSourceFactoryHandle.class);
 
   @Override
   @MapperOfMoving
