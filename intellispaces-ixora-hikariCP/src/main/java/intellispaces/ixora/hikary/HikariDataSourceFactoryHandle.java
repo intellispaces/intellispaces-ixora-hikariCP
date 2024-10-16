@@ -8,7 +8,7 @@ import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
 import intellispaces.ixora.rdb.hikary.MovableHikariDataSource;
 import intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactory;
 
-@ObjectHandle(value = HikariDataSourceFactoryDomain.class, name = "HikariDataSourceFactoryHandleImpl")
+@ObjectHandle(HikariDataSourceFactoryDomain.class)
 public abstract class HikariDataSourceFactoryHandle implements MovableHikariDataSourceFactory {
 
   @Override
