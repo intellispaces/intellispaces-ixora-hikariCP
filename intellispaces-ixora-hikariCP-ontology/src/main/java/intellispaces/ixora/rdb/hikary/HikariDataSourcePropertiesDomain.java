@@ -8,3 +8,4 @@ import intellispaces.ixora.rdb.DataSourcePropertiesDomain;
 @Domain("3094f25e-798b-4bf9-a84c-7e581522060a")
 public interface HikariDataSourcePropertiesDomain extends DataSourcePropertiesDomain {
 }
+

@@ -24,6 +24,9 @@ public abstract class HikariConfiguration {
       HikariDataSourceFactory hikariDataSourceFactory,
       HikariDataSourceProperties hikariDataSourceProperties
   ) {
-    return hikariDataSourceFactory.create(hikariDataSourceProperties).asMovableOrElseThrow();
+    return hikariDataSourceFactory
+        .asMovableOrElseThrow()
+        .create(hikariDataSourceProperties)
+        .asMovableOrElseThrow();
   }
 }
