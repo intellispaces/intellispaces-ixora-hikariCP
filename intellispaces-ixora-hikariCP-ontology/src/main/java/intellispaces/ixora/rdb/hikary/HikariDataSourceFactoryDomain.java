@@ -1,10 +1,10 @@
 package intellispaces.ixora.rdb.hikary;
 
-import intellispaces.framework.core.annotation.Channel;
-import intellispaces.framework.core.annotation.Domain;
-import intellispaces.framework.core.annotation.Factory;
-import intellispaces.framework.core.annotation.Movable;
-import intellispaces.framework.core.traverse.TraverseTypes;
+import intellispaces.jaquarius.annotation.Channel;
+import intellispaces.jaquarius.annotation.Domain;
+import intellispaces.jaquarius.annotation.Factory;
+import intellispaces.jaquarius.annotation.Movable;
+import intellispaces.jaquarius.traverse.TraverseTypes;
 
 @Domain("7aae1f0c-1d54-43a3-a9f8-fc32bbb6891e")
 public interface HikariDataSourceFactoryDomain {

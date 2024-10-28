@@ -1,8 +1,8 @@
 package intellispaces.ixora.hikary;
 
 import com.zaxxer.hikari.HikariConfig;
-import intellispaces.framework.core.annotation.MapperOfMoving;
-import intellispaces.framework.core.annotation.ObjectHandle;
+import intellispaces.jaquarius.annotation.MapperOfMoving;
+import intellispaces.jaquarius.annotation.ObjectHandle;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceFactoryDomain;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
 import intellispaces.ixora.rdb.hikary.MovableHikariDataSource;

@@ -1,8 +1,8 @@
 package intellispaces.ixora.rdb.hikary;
 
-import intellispaces.framework.core.annotation.Channel;
-import intellispaces.framework.core.annotation.Data;
-import intellispaces.framework.core.annotation.Domain;
+import intellispaces.jaquarius.annotation.Channel;
+import intellispaces.jaquarius.annotation.Data;
+import intellispaces.jaquarius.annotation.Domain;
 import intellispaces.ixora.rdb.DataSourcePropertiesDomain;
 
 @Data
