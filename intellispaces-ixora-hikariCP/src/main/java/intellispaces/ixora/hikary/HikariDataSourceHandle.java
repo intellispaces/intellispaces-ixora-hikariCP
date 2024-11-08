@@ -3,12 +3,12 @@ package intellispaces.ixora.hikary;
 import intellispaces.jaquarius.annotation.Mapper;
 import intellispaces.jaquarius.annotation.MapperOfMoving;
 import intellispaces.jaquarius.annotation.ObjectHandle;
-import intellispaces.jaquarius.exception.TraverseException;
 import intellispaces.ixora.rdb.ConnectionHandleImpl;
 import intellispaces.ixora.rdb.MovableConnection;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceDomain;
 import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
 import intellispaces.ixora.rdb.hikary.MovableHikariDataSource;
+import intellispaces.jaquarius.exception.TraverseExceptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +45,7 @@ public abstract class HikariDataSourceHandle implements MovableHikariDataSource 
       java.sql.Connection connection = dataSource.getConnection();
       return new ConnectionHandleImpl(connection);
     } catch (SQLException e) {
-      throw TraverseException.withCauseAndMessage(e, "Could not get JDBC connection from Hikari data source. " +
+      throw TraverseExceptions.withCauseAndMessage(e, "Could not get JDBC connection from Hikari data source. " +
           "URL '{}', username '{}'");
     }
   }
