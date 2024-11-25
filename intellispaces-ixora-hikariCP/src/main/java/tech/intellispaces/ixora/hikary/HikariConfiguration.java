@@ -1,11 +1,11 @@
-package intellispaces.ixora.hikary;
+package tech.intellispaces.ixora.hikary;
 
-import intellispaces.ixora.rdb.hikary.HikariDataSource;
-import intellispaces.ixora.rdb.hikary.HikariDataSourceFactory;
-import intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
-import intellispaces.jaquarius.annotation.Configuration;
-import intellispaces.jaquarius.annotation.Projection;
-import intellispaces.jaquarius.annotation.Properties;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSource;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceFactory;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
+import tech.intellispaces.jaquarius.annotation.Configuration;
+import tech.intellispaces.jaquarius.annotation.Projection;
+import tech.intellispaces.jaquarius.annotation.Properties;
 
 @Configuration
 public abstract class HikariConfiguration {

@@ -1,8 +1,8 @@
-package intellispaces.ixora.rdb.hikary;
+package tech.intellispaces.ixora.rdb.hikary;
 
-import intellispaces.ixora.rdb.DataSourceDomain;
-import intellispaces.jaquarius.annotation.Channel;
-import intellispaces.jaquarius.annotation.Domain;
+import tech.intellispaces.ixora.rdb.DataSourceDomain;
+import tech.intellispaces.jaquarius.annotation.Channel;
+import tech.intellispaces.jaquarius.annotation.Domain;
 
 @Domain("01908c4f-942b-7715-a5a0-0d89c9aaebaf")
 public interface HikariDataSourceDomain extends DataSourceDomain {
