@@ -2,7 +2,7 @@ package tech.intellispaces.ixora.hikary;
 
 import com.zaxxer.hikari.HikariConfig;
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceFactoryDomain;
-import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceSettings;
 import tech.intellispaces.ixora.rdb.hikary.MovableHikariDataSource;
 import tech.intellispaces.ixora.rdb.hikary.MovableHikariDataSourceFactory;
 import tech.intellispaces.jaquarius.annotation.MapperOfMoving;
@@ -13,12 +13,12 @@ public abstract class HikariDataSourceFactoryHandle implements MovableHikariData
 
   @Override
   @MapperOfMoving
-  public MovableHikariDataSource create(HikariDataSourceProperties properties) {
+  public MovableHikariDataSource create(HikariDataSourceSettings settings) {
     var config = new HikariConfig();
-    config.setJdbcUrl(properties.url().trim());
-    config.setUsername(properties.username().trim());
-    config.setPassword(properties.password().trim());
+    config.setJdbcUrl(settings.url().trim());
+    config.setUsername(settings.username().trim());
+    config.setPassword(settings.password().trim());
     var hds = new com.zaxxer.hikari.HikariDataSource(config);
-    return new HikariDataSourceHandleImpl(hds, properties);
+    return new HikariDataSourceHandleImpl(hds, settings);
   }
 }

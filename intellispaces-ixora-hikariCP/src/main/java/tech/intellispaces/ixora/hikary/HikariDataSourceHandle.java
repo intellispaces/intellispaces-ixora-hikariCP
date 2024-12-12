@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import tech.intellispaces.ixora.rdb.ConnectionHandleImpl;
 import tech.intellispaces.ixora.rdb.MovableConnection;
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceDomain;
-import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceSettings;
 import tech.intellispaces.ixora.rdb.hikary.MovableHikariDataSource;
 import tech.intellispaces.jaquarius.annotation.Mapper;
 import tech.intellispaces.jaquarius.annotation.MapperOfMoving;
@@ -18,20 +18,20 @@ import java.sql.SQLException;
 public abstract class HikariDataSourceHandle implements MovableHikariDataSource {
   private static final Logger LOG = LoggerFactory.getLogger(HikariDataSourceHandle.class);
 
-  private final HikariDataSourceProperties dataSourceProperties;
+  private final HikariDataSourceSettings dataSourceProperties;
   private final com.zaxxer.hikari.HikariDataSource dataSource;
 
   public HikariDataSourceHandle(
       com.zaxxer.hikari.HikariDataSource dataSource,
-      HikariDataSourceProperties dataSourceProperties
+      HikariDataSourceSettings dataSourceSettings
   ) {
     this.dataSource = dataSource;
-    this.dataSourceProperties = dataSourceProperties;
+    this.dataSourceProperties = dataSourceSettings;
   }
 
   @Mapper
   @Override
-  public HikariDataSourceProperties properties() {
+  public HikariDataSourceSettings settings() {
     return dataSourceProperties;
   }
 

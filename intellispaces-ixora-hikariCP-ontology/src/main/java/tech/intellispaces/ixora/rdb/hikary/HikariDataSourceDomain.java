@@ -11,5 +11,5 @@ public interface HikariDataSourceDomain extends DataSourceDomain {
   DataSourceDomain asDataSource();
 
   @Channel("4167089f-3759-4187-85fb-5b324fcc2565")
-  HikariDataSourcePropertiesDomain properties();
+  HikariDataSourceSettingsDomain settings();
 }

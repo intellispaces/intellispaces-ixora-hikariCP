@@ -2,17 +2,17 @@ package tech.intellispaces.ixora.hikary;
 
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSource;
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceFactory;
-import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceProperties;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceSettings;
 import tech.intellispaces.jaquarius.annotation.Configuration;
 import tech.intellispaces.jaquarius.annotation.Projection;
-import tech.intellispaces.jaquarius.annotation.Properties;
+import tech.intellispaces.jaquarius.annotation.Settings;
 
 @Configuration
 public abstract class HikariConfiguration {
 
   @Projection
-  @Properties("datasource")
-  public abstract HikariDataSourceProperties hikariDataSourceProperties();
+  @Settings("datasource")
+  public abstract HikariDataSourceSettings hikariDataSourceSettings();
 
   @Projection
   public HikariDataSourceFactory hikariDataSourceFactory() {
@@ -22,11 +22,11 @@ public abstract class HikariConfiguration {
   @Projection
   public HikariDataSource dataSource(
       HikariDataSourceFactory hikariDataSourceFactory,
-      HikariDataSourceProperties hikariDataSourceProperties
+      HikariDataSourceSettings hikariDataSourceSettings
   ) {
     return hikariDataSourceFactory
         .asMovableOrElseThrow()
-        .create(hikariDataSourceProperties)
+        .create(hikariDataSourceSettings)
         .asMovableOrElseThrow();
   }
 }

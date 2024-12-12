@@ -15,5 +15,5 @@ public interface HikariDataSourceFactoryDomain {
       allowedTraverse = TraverseTypes.MappingOfMoving
   )
   @Movable
-  HikariDataSourceDomain create(HikariDataSourcePropertiesDomain properties);
+  HikariDataSourceDomain create(HikariDataSourceSettingsDomain properties);
 }
