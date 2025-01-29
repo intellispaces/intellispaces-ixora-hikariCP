@@ -2,11 +2,11 @@ package tech.intellispaces.ixora.hikary;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import tech.intellispaces.ixora.rdb.ConnectionHandleImpl;
-import tech.intellispaces.ixora.rdb.MovableConnection;
+import tech.intellispaces.ixora.rdb.JavaConnectionHandleImpl;
+import tech.intellispaces.ixora.rdb.MovableConnectionHandle;
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceDomain;
-import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceSettings;
-import tech.intellispaces.ixora.rdb.hikary.MovableHikariDataSource;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceSettingsHandle;
+import tech.intellispaces.ixora.rdb.hikary.MovableHikariDataSourceHandle;
 import tech.intellispaces.jaquarius.annotation.Mapper;
 import tech.intellispaces.jaquarius.annotation.MapperOfMoving;
 import tech.intellispaces.jaquarius.annotation.ObjectHandle;
@@ -15,15 +15,15 @@ import tech.intellispaces.jaquarius.exception.TraverseExceptions;
 import java.sql.SQLException;
 
 @ObjectHandle(value = HikariDataSourceDomain.class, name = "HikariDataSourceHandleImpl")
-public abstract class HikariDataSourceHandle implements MovableHikariDataSource {
+public abstract class HikariDataSourceHandle implements MovableHikariDataSourceHandle {
   private static final Logger LOG = LoggerFactory.getLogger(HikariDataSourceHandle.class);
 
-  private final HikariDataSourceSettings dataSourceProperties;
+  private final HikariDataSourceSettingsHandle dataSourceProperties;
   private final com.zaxxer.hikari.HikariDataSource dataSource;
 
   public HikariDataSourceHandle(
       com.zaxxer.hikari.HikariDataSource dataSource,
-      HikariDataSourceSettings dataSourceSettings
+      HikariDataSourceSettingsHandle dataSourceSettings
   ) {
     this.dataSource = dataSource;
     this.dataSourceProperties = dataSourceSettings;
@@ -31,19 +31,19 @@ public abstract class HikariDataSourceHandle implements MovableHikariDataSource 
 
   @Mapper
   @Override
-  public HikariDataSourceSettings settings() {
+  public HikariDataSourceSettingsHandle settings() {
     return dataSourceProperties;
   }
 
   @Override
   @MapperOfMoving
-  public MovableConnection getConnection() {
+  public MovableConnectionHandle getConnection() {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Get JDBC connection from Hikari data source. URL '{}', username '{}'", url(), username());
     }
     try {
       java.sql.Connection connection = dataSource.getConnection();
-      return new ConnectionHandleImpl(connection);
+      return new JavaConnectionHandleImpl(connection);
     } catch (SQLException e) {
       throw TraverseExceptions.withCauseAndMessage(e, "Could not get JDBC connection from Hikari data source. " +
           "URL '{}', username '{}'");
