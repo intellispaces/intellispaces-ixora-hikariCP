@@ -1,7 +1,7 @@
 package tech.intellispaces.ixora.hikary;
 
-import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceHandle;
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceFactoryHandle;
+import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceHandle;
 import tech.intellispaces.ixora.rdb.hikary.HikariDataSourceSettingsHandle;
 import tech.intellispaces.jaquarius.annotation.Configuration;
 import tech.intellispaces.jaquarius.annotation.Projection;
